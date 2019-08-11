@@ -22,13 +22,17 @@ def generate_products(num_products=30):
 
 
 def inventory_report(products):
-    names = set([p.name for p in products])
+    unique_set = set()
+    #names = set([p.name for p in products])
     avg_price = sum([p.price for p in products]) / len(products)
     avg_weight = sum([p.weight for p in products]) / len(products) 
     avg_flammability = sum([p.flammability for p in products]) / len(products)   
+    for product in products:
+        unique_set.add(product.name)
+        
     
     print('ACME CORPORATION OFFICIAL INVENTORY REPORT')
-    print(f'Unique product names: {names}')
+    print('unique products',len(unique_set))
     print(f'Average price: {avg_price}')
     print(f'Average weight: {avg_weight}')
     print(f'Average flammability: {avg_flammability}')

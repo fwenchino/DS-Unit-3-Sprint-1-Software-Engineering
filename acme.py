@@ -1,4 +1,3 @@
-
 import unittest
 import random
 
@@ -13,35 +12,33 @@ class Product(object):
     def stealability(self):
       steal_factor = self.price/self.weight
       if steal_factor < 0.5 :
-        print('Not so stealable')
+        return 'Not so stealable'
       elif steal_factor <= 0.5 and steal_factor < 1.0  :
-        print('Kind stealable')
+        return 'Kind stealable'
       else :
-        print('Very stealable')
+        return 'Very stealable'
     
     def explode(self):
       explode_f = self.weight * self.flammability
       if explode_f < 10 :
-        print('...fizzle')
+        return '...fizzle'
       elif explode_f >= 10 and explode_f < 50  :
-        print('...boom')
+        return '...boom'
       else :
-        print('Very BABOOM')
+        return 'Very BABOOM'
 
-
-
-        class BoxingGlove(Product):
-            def __init__(self, weight = 10):
-              super().__init__(self, weight=weight)
-            
-            def explode(self):
-              print('... its a glove')
-              
-            def punch(self):
-              if self.weight <5 :
-                print('that tickels')
-              
-              elif self.weight >= 5 and self.weight < 15  :
-                print('that hurts')
-              else:
-                print('ouch mother!')
+class BoxingGlove(Product):
+    def __init__(self, weight = 10):
+        super().__init__(self, weight=weight)
+        
+    def explode(self):
+        return('... its a glove')
+          
+    def punch(self):
+        if self.weight <5 :
+            return('that tickels')
+          
+        elif self.weight >= 5 and self.weight < 15  :
+            return('that hurts')
+        else:
+            return('ouch mother!')
