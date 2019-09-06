@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python 
 
 from random import randint, sample, uniform
 from acme import Product
